@@ -105,7 +105,7 @@ export default function DecodeMe() {
           className="relative w-64 h-64 lg:w-80 lg:h-80 flex-shrink-0 mt-24 lg:mt-0"
         >
           <Image
-            src="/profile.jpeg"
+            src="/profile.jpg"
             alt="Profile"
             fill
             className="rounded-2xl object-cover border-4 border-orange-500 shadow-xl"

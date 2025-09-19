@@ -27,7 +27,7 @@ export default function TheGrind() {
               setCurrentIndex(i);
             }
           },
-          { threshold: 0.2 }
+          { threshold: 0.05 }
         );
         observer.observe(ref.current);
         observers.push(observer);
@@ -54,17 +54,18 @@ export default function TheGrind() {
 const scrollToNext = () => {
   if (currentIndex === sectionRefs.length - 1) {
     if (!atPageEnd) {
-      // Scroll down by viewport height until end is reached
       window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+      setCurrentIndex(sectionRefs.length - 1); // ✅ force sync
     } else {
-      // If truly at bottom, go back to top
       window.scrollTo({ top: 0, behavior: "smooth" });
+      setCurrentIndex(0); // ✅ reset to top
     }
   } else {
-    // Scroll to next section normally
-    const nextRef = sectionRefs[currentIndex + 1];
+    const nextIndex = currentIndex + 1;
+    const nextRef = sectionRefs[nextIndex];
     if (nextRef?.current) {
       nextRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      setCurrentIndex(nextIndex); // ✅ update immediately
     }
   }
 };
@@ -77,8 +78,8 @@ const scrollToNext = () => {
   const work = {
     company: "Cowlar Design Studio",
     role: "Software Algorithm Machine Learning and AI (SAMA) Engineer",
-    period: "Jun 2025 – Aug 2025",
-    desc: "Researched, designed, and developed next-gen AI/IoT and robotics solutions with focus on security, scalability, and real-world deployment.",
+    period: "Jun 2025 – Current",
+    desc: "Research, design, and develop next-gen AI/IoT and software solutions with focus on security, scalability, and real-world deployment.",
     logo: "/cowlar.png",
   };
 

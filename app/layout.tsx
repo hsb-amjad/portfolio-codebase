@@ -3,7 +3,7 @@ import { Nunito } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Haseeb Amjad",
   description: "Personal portfolio showcasing ML, Robotics, IoT, and MedTech projects.",
 };
 
