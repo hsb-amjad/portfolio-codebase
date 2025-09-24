@@ -6,6 +6,11 @@ import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 
 const projects = [
+    {
+    title: "ClarifyCoder-Agent: An Agentic AI Framework for Ambiguity Resolution and Trustworthy Code Generation",
+    desc: "ClarifyCoder-Agent is a multi-agent coding assistant that detects ambiguity, asks clarifying questions, and iteratively generates, evaluates, and refines code with novel metrics and benchmark datasets for trustworthy developer-aligned AI.",
+    image: "/clarify-coder.png",
+  },
   {
     title: "Indigenous Path Planning Robot with Pick-and-Place Mechanism",
     desc: "Designed an autonomous robot with custom PCB H-Bridge motor driver, SolidWorks CAD base, integrated sensors & microcontroller, and Arduino programming.",

@@ -37,6 +37,17 @@ export default function Brainwaves() {
   };
 
   const publications = [
+            {
+      year: 2025,
+      title:
+        "Learning Sleep Apnea Patterns from Raw ECG via Convolutional–Recurrent Architectures",
+      authors: "Nija Asif, Haseeb Amjad, Ahmad Tariq, Umar Shahbaz Khan, Hassan Elahi",
+      venue: "The 15th International Conference on Information and Communication Technology and Systems (ICTS 2025) (Under Review)",
+      link: "#",
+      abstract:
+        "This paper is currently under peer review and the abstract will be available upon publication.",
+      underReview: true,
+    },
         {
       year: 2025,
       title:
@@ -46,7 +57,7 @@ export default function Brainwaves() {
       link: "#",
       abstract:
         "This paper is currently under peer review and the abstract will be available upon publication.",
-      underReview: true, // same look, just not clickable
+      underReview: true,
     },
     {
       year: 2024,
