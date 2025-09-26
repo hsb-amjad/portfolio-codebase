@@ -78,7 +78,7 @@ const scrollToNext = () => {
   const work = {
     company: "Cowlar Design Studio",
     role: "Software Algorithm Machine Learning and AI (SAMA) Engineer",
-    period: "Jun 2025 – Current",
+    period: "June 2025 – Current",
     desc: "Research, design, and develop next-gen AI/IoT and software solutions with focus on security, scalability, and real-world deployment.",
     logo: "/cowlar.png",
   };
@@ -87,14 +87,14 @@ const scrollToNext = () => {
     {
       company: "Spatial Stack",
       role: "Geo-AI Intern",
-      period: "Feb 2025 – Jun 2025",
+      period: "Jan 2024 – June 2025",
       desc: "Built deep learning pipelines for object detection and segmentation on aerial imagery, with GIS-driven urban and environmental analysis.",
       logo: "/spatialstack.png",
     },
     {
       company: "National Centre of Robotics & Automation (NCRA)",
       role: "ML Engineer Intern",
-      period: "Jun 2024 – Aug 2024",
+      period: "June 2024 – Aug 2024",
       desc: "Developed biomedical AI models for skin lesion segmentation and cancer diagnostics using computer vision and deep learning.",
       logo: "/ncra.png",
     },
@@ -111,28 +111,28 @@ const scrollToNext = () => {
     {
       org: "Robotics & Automation Club (RAC), NUST",
       role: "Technical Workshops Supervisor",
-      period: "Jun 2024 – Apr 2025",
+      period: "June 2024 – Apr 2025",
       desc: "Planned and executed technical workshops in AI/ML, UAVs, and biomedical robotics. Mentored domain leads and ensured engaging sessions.",
       logo: "/rac.png",
     },
     {
       org: "Robotics & Automation Club (RAC), NUST",
       role: "Team Lead Artificial Intelligence",
-      period: "Sep 2023 – Jun 2024",
+      period: "Sep 2023 – June 2024",
       desc: "Conducted ML sessions and led biomedical AI projects including plant disease classification and ECG analysis.",
       logo: "/rac.png",
     },
     {
       org: "Human Alliance Organization (HAO)",
       role: "Community Engagement Manager",
-      period: "Jun 2023 – Oct 2024",
+      period: "June 2023 – Oct 2024",
       desc: "Led outreach, fostered partnerships, and implemented engagement strategies for community initiatives.",
       logo: "/hao.png",
     },
     {
       org: "Robotics & Automation Club (RAC), NUST",
       role: "Sponsorship Manager",
-      period: "Mar 2022 – Jun 2023",
+      period: "Mar 2022 – June 2023",
       desc: "Secured sponsorships, negotiated agreements, and ensured value delivery for partner organizations.",
       logo: "/rac.png",
     },
