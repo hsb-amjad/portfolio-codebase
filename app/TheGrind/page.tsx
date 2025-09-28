@@ -87,7 +87,7 @@ const scrollToNext = () => {
     {
       company: "Spatial Stack",
       role: "Geo-AI Intern",
-      period: "Jan 2024 – June 2025",
+      period: "Feb 2025 – June 2025",
       desc: "Built deep learning pipelines for object detection and segmentation on aerial imagery, with GIS-driven urban and environmental analysis.",
       logo: "/spatialstack.png",
     },
