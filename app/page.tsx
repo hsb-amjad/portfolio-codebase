@@ -78,7 +78,7 @@ export default function HomePage() {
 <div className="absolute top-0 left-0 w-full bg-white/5 backdrop-blur-md z-30 px-8 py-4 shadow-sm">
   <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-3 md:gap-0">
     <h1 className="text-2xl md:text-4xl font-extrabold tracking-tight text-center md:text-left">
-      HASEEB <span className="text-orange-500">AMJAD</span>
+      YOUR <span className="text-orange-500">NAME</span>
     </h1>
 
     {/* 🔥 Right Side Buttons */}
