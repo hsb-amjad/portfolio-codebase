@@ -126,10 +126,7 @@ export default function DecodeMe() {
           className="max-w-3xl text-lg leading-relaxed text-gray-200 space-y-6 text-justify"
         >
           <p>
-            I’m <span className="text-orange-400 font-semibold">Haseeb Amjad</span>, a Machine Learning Engineer and Mechatronics mind who builds bridges between algorithms and machines. My world swings between writing neural networks that learn from medical signals, to crafting robots that roll, fly, and even clean tank gun barrels. I’m not just a coder who trains models; I’m an engineer who deploys them, scales them, and tests them in the real world. My journey started with mechatronics at NUST, but curiosity pushed me deeper, from robotics competitions where sparks literally flew, to research labs where I fused IoT devices with AI for healthcare. Along the way, I’ve published papers, won prizes, and turned messy data into systems that actually solve problems.
-          </p>
-          <p>
-            Skills? Think Python, PyTorch, MLflow, Docker, LangChain, and beyond, stitched together with a bit of chaos and a lot of discipline. Achievements? From winning national robotics contests to pushing MedTech research into peer-review, I carry both the builder’s grease and the researcher’s ink. Decode me, and you’ll find someone who thrives at the intersection of software, hardware, and imagination.
+            A <span className="text-orange-400 font-semibold">Machine Learning Engineer</span> and Passionate Researcher with a strong foundation in neural networks, transformer architectures, computer vision, and deployment tools. Turning Python spells into intelligent systems; PyTorch, TensorFlow, custom ML models, RAG and LangChain are my favorite ingredients. Training machines to avoid my mistakes. If I lost, return to the nearest dataset...
           </p>
         </motion.div>
       </section>
@@ -269,11 +266,11 @@ export default function DecodeMe() {
 
         <div className="flex flex-wrap justify-center gap-8">
           {[
-            "Python","Machine Learning","Deep Learning","Data Engineering","Image Processing","OpenCV",
-            "Scikit-Learn","PyTorch","TerraTorch","TorchServe","TensorFlow","MLflow","FastAPI","Docker",
-            "Postman","GitLab","MongoDB","Slack","PostgreSQL","SQLite","LangChain","LangGraph",
-            "Whisper (STT)","ElevenLabs (TTS)","HuggingFace","Agentic RAG","OpenAI Embeddings",
-            "Arduino","Matlab",
+            "Python", "Machine Learning", "Deep Learning", "Data Engineering", "Image Processing", "OpenCV",
+            "Scikit-Learn", "PyTorch", "TerraTorch", "TorchServe", "TensorFlow", "MLflow", "FastAPI", "Docker",
+            "Postman", "GitLab", "MongoDB", "Slack", "PostgreSQL", "SQLite", "LangChain", "LangGraph",
+            "Whisper (STT)", "ElevenLabs (TTS)", "HuggingFace", "Agentic RAG", "OpenAI Embeddings",
+            "Arduino", "Matlab",
           ].map((skill, i) => (
             <motion.span
               key={i}
@@ -317,10 +314,10 @@ export default function DecodeMe() {
                   bg-orange-400/10 shadow-md cursor-pointer"
       >
         <span
-  className="relative -translate-y-0.5 text-orange-400 text-lg font-bold drop-shadow-[0_0_6px_rgba(251,146,60,0.9)] leading-none select-none pointer-events-none"
->
-  {currentIndex === sectionRefs.length - 1 && atPageEnd ? "↑" : "↓"}
-</span>
+          className="relative -translate-y-0.5 text-orange-400 text-lg font-bold drop-shadow-[0_0_6px_rgba(251,146,60,0.9)] leading-none select-none pointer-events-none"
+        >
+          {currentIndex === sectionRefs.length - 1 && atPageEnd ? "↑" : "↓"}
+        </span>
 
       </motion.div>
     </div>

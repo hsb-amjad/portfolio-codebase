@@ -51,37 +51,46 @@ export default function TheGrind() {
   }, []);
 
   // Scroll logic
-const scrollToNext = () => {
-  if (currentIndex === sectionRefs.length - 1) {
-    if (!atPageEnd) {
-      window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
-      setCurrentIndex(sectionRefs.length - 1); // ✅ force sync
+  const scrollToNext = () => {
+    if (currentIndex === sectionRefs.length - 1) {
+      if (!atPageEnd) {
+        window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+        setCurrentIndex(sectionRefs.length - 1); // ✅ force sync
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setCurrentIndex(0); // ✅ reset to top
+      }
     } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      setCurrentIndex(0); // ✅ reset to top
+      const nextIndex = currentIndex + 1;
+      const nextRef = sectionRefs[nextIndex];
+      if (nextRef?.current) {
+        nextRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+        setCurrentIndex(nextIndex); // ✅ update immediately
+      }
     }
-  } else {
-    const nextIndex = currentIndex + 1;
-    const nextRef = sectionRefs[nextIndex];
-    if (nextRef?.current) {
-      nextRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-      setCurrentIndex(nextIndex); // ✅ update immediately
-    }
-  }
-};
+  };
 
   // Jump via tabs
   const scrollToRef = (index: number) => {
     sectionRefs[index]?.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const work = {
-    company: "Cowlar Design Studio",
-    role: "Software Algorithm Machine Learning and AI (SAMA) Engineer",
-    period: "June 2025 – Current",
-    desc: "Research, design, and develop next-gen AI/IoT and software solutions with focus on security, scalability, and real-world deployment.",
-    logo: "/cowlar.png",
-  };
+  const workExperience = [
+    {
+      company: "Spatial Stack",
+      role: "Machine Learning Engineer",
+      period: "November 2025 – Current",
+      desc: "ML Engineer specializing in computer vision for multispectral and geospatial satellite data. I lead the development of algorithmic workflows and scalable production pipelines using PyTorch, APIs, and Docker.",
+      logo: "/spatialstack.png",
+    },
+    {
+      company: "Cowlar Design Studio",
+      role: "Machine Learning Engineer",
+      period: "June 2025 – August 2025",
+      desc: "Research, design, and develop next-gen AI/IoT and software solutions with focus on security, scalability, and real-world deployment.",
+      logo: "/cowlar.png",
+    },
+  ];
 
   const internships = [
     {
@@ -189,36 +198,40 @@ const scrollToNext = () => {
           WORK
         </motion.h2>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }} // ✅ appear earlier
-          transition={{ duration: 0.4 }} // ✅ faster
-          whileHover={{ scale: 1.03, rotate: -0.5 }}
-          className="relative bg-white/5 backdrop-blur-md rounded-3xl p-8 shadow-lg border border-orange-500/20 hover:border-orange-400 hover:shadow-orange-500/30 transition group overflow-hidden max-w-3xl"
-        >
-          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition" />
-          <div className="flex items-center gap-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl">
+          {workExperience.map((job, i) => (
             <motion.div
-              whileHover={{ rotate: 10, scale: 1.1 }}
-              className="relative w-20 h-20 flex-shrink-0"
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }} // ✅ appear earlier
+              transition={{ duration: 0.4, delay: i * 0.05 }} // ✅ faster stagger
+              whileHover={{ scale: 1.03, rotate: i % 2 === 0 ? -0.5 : 0.5 }}
+              className="relative bg-white/5 backdrop-blur-md rounded-3xl p-8 shadow-lg border border-orange-500/20 hover:border-orange-400 hover:shadow-orange-500/30 transition group overflow-hidden"
             >
-              <Image
-                src={work.logo}
-                alt={work.company}
-                fill
-                className="rounded-full object-contain border-2 border-orange-400 p-2 bg-black/60"
-              />
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition" />
+              <div className="flex items-center gap-6 relative z-10">
+                <motion.div
+                  whileHover={{ rotate: 10, scale: 1.1 }}
+                  className="relative w-20 h-20 flex-shrink-0"
+                >
+                  <Image
+                    src={job.logo}
+                    alt={job.company}
+                    fill
+                    className="rounded-full object-contain border-2 border-orange-400 p-2 bg-black/60"
+                  />
+                </motion.div>
+                <div>
+                  <h3 className="text-xl font-bold text-orange-300 mb-1">{job.role}</h3>
+                  <p className="text-gray-400 italic">{job.company}</p>
+                  <p className="text-sm text-gray-500">{job.period}</p>
+                  <p className="text-gray-300 mt-3 leading-relaxed">{job.desc}</p>
+                </div>
+              </div>
             </motion.div>
-            <div>
-              <h3 className="text-2xl font-bold text-orange-300 mb-1">{work.role}</h3>
-              <p className="text-gray-400 italic">{work.company}</p>
-              <p className="text-sm text-gray-500">{work.period}</p>
-              <p className="text-gray-300 mt-3 leading-relaxed">{work.desc}</p>
-            </div>
-          </div>
-        </motion.div>
-
+          ))}
+        </div>
       </section>
 
       {/* INTERNSHIPS */}
@@ -238,37 +251,37 @@ const scrollToNext = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl">
           {internships.map((job, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }} // ✅ earlier
-            transition={{ duration: 0.4, delay: i * 0.05 }} // ✅ faster stagger
-            whileHover={{ scale: 1.03, rotate: i % 2 === 0 ? -0.5 : 0.5 }}
-            className="relative bg-white/5 backdrop-blur-md rounded-3xl p-8 shadow-lg border border-orange-500/20 hover:border-orange-400 hover:shadow-orange-500/30 transition group overflow-hidden"
-          >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition" />
-            <div className="flex items-center gap-6 relative z-10">
-              <motion.div
-                whileHover={{ rotate: 10, scale: 1.1 }}
-                className="relative w-20 h-20 flex-shrink-0"
-              >
-                <Image
-                  src={job.logo}
-                  alt={job.company}
-                  fill
-                  className="rounded-full object-contain border-2 border-orange-400 p-2 bg-black/60"
-                />
-              </motion.div>
-              <div>
-                <h3 className="text-xl font-bold text-orange-300 mb-1">{job.role}</h3>
-                <p className="text-gray-400 italic">{job.company}</p>
-                <p className="text-sm text-gray-500">{job.period}</p>
-                <p className="text-gray-300 mt-3 leading-relaxed">{job.desc}</p>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }} // ✅ earlier
+              transition={{ duration: 0.4, delay: i * 0.05 }} // ✅ faster stagger
+              whileHover={{ scale: 1.03, rotate: i % 2 === 0 ? -0.5 : 0.5 }}
+              className="relative bg-white/5 backdrop-blur-md rounded-3xl p-8 shadow-lg border border-orange-500/20 hover:border-orange-400 hover:shadow-orange-500/30 transition group overflow-hidden"
+            >
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition" />
+              <div className="flex items-center gap-6 relative z-10">
+                <motion.div
+                  whileHover={{ rotate: 10, scale: 1.1 }}
+                  className="relative w-20 h-20 flex-shrink-0"
+                >
+                  <Image
+                    src={job.logo}
+                    alt={job.company}
+                    fill
+                    className="rounded-full object-contain border-2 border-orange-400 p-2 bg-black/60"
+                  />
+                </motion.div>
+                <div>
+                  <h3 className="text-xl font-bold text-orange-300 mb-1">{job.role}</h3>
+                  <p className="text-gray-400 italic">{job.company}</p>
+                  <p className="text-sm text-gray-500">{job.period}</p>
+                  <p className="text-gray-300 mt-3 leading-relaxed">{job.desc}</p>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
         </div>
       </section>
 
@@ -289,66 +302,66 @@ const scrollToNext = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl">
           {leadership.map((item, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }} // ✅ appear earlier
-            transition={{ duration: 0.4, delay: i * 0.05 }} // ✅ smoother, not too slow
-            whileHover={{ scale: 1.03, rotate: i % 2 === 0 ? -0.5 : 0.5 }}
-            className="relative bg-white/5 backdrop-blur-md rounded-3xl p-6 shadow-lg border border-orange-500/20 hover:border-orange-400 hover:shadow-orange-500/30 transition group overflow-hidden"
-          >
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition" />
-            <div className="flex items-center gap-5 relative z-10">
-              <motion.div
-                whileHover={{ rotate: 10, scale: 1.1 }}
-                className="relative w-16 h-16 flex-shrink-0"
-              >
-                <Image
-                  src={item.logo}
-                  alt={item.org}
-                  fill
-                  className="rounded-full object-contain border-2 border-orange-400 p-2 bg-black/60"
-                />
-              </motion.div>
-              <div>
-                <h3 className="text-lg font-bold text-orange-300">{item.role}</h3>
-                <p className="text-gray-400 italic">{item.org}</p>
-                <p className="text-sm text-gray-500">{item.period}</p>
-                <p className="text-gray-300 mt-2 leading-relaxed">{item.desc}</p>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }} // ✅ appear earlier
+              transition={{ duration: 0.4, delay: i * 0.05 }} // ✅ smoother, not too slow
+              whileHover={{ scale: 1.03, rotate: i % 2 === 0 ? -0.5 : 0.5 }}
+              className="relative bg-white/5 backdrop-blur-md rounded-3xl p-6 shadow-lg border border-orange-500/20 hover:border-orange-400 hover:shadow-orange-500/30 transition group overflow-hidden"
+            >
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition" />
+              <div className="flex items-center gap-5 relative z-10">
+                <motion.div
+                  whileHover={{ rotate: 10, scale: 1.1 }}
+                  className="relative w-16 h-16 flex-shrink-0"
+                >
+                  <Image
+                    src={item.logo}
+                    alt={item.org}
+                    fill
+                    className="rounded-full object-contain border-2 border-orange-400 p-2 bg-black/60"
+                  />
+                </motion.div>
+                <div>
+                  <h3 className="text-lg font-bold text-orange-300">{item.role}</h3>
+                  <p className="text-gray-400 italic">{item.org}</p>
+                  <p className="text-sm text-gray-500">{item.period}</p>
+                  <p className="text-gray-300 mt-2 leading-relaxed">{item.desc}</p>
+                </div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
         </div>
       </section>
 
       {/* GLOBAL SCROLL INDICATOR */}
-<motion.div
-  onClick={scrollToNext}
-  initial={{ opacity: 0, y: 10 }}
-  animate={{
-    opacity: [0.6, 1, 0.6],
-    y: [0, 6, 0],
-    boxShadow: [
-      "0 0 6px rgba(251,146,60,0.4)",
-      "0 0 16px rgba(251,146,60,0.7)",
-      "0 0 6px rgba(251,146,60,0.4)",
-    ],
-  }}
-  transition={{ duration: 2, repeat: Infinity }}
-  className="fixed bottom-6 right-6 z-50 flex items-center justify-center 
+      <motion.div
+        onClick={scrollToNext}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{
+          opacity: [0.6, 1, 0.6],
+          y: [0, 6, 0],
+          boxShadow: [
+            "0 0 6px rgba(251,146,60,0.4)",
+            "0 0 16px rgba(251,146,60,0.7)",
+            "0 0 6px rgba(251,146,60,0.4)",
+          ],
+        }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="fixed bottom-6 right-6 z-50 flex items-center justify-center 
              w-10 h-10 rounded-full border border-orange-400/40 
              bg-orange-400/10 shadow-md cursor-pointer"
->
-  <span
-    className="relative -translate-y-0.5 text-orange-400 text-lg font-bold leading-none 
+      >
+        <span
+          className="relative -translate-y-0.5 text-orange-400 text-lg font-bold leading-none 
                drop-shadow-[0_0_6px_rgba(251,146,60,0.9)] select-none pointer-events-none"
-  >
-    {currentIndex === sectionRefs.length - 1 && atPageEnd ? "↑" : "↓"}
-  </span>
-</motion.div>
+        >
+          {currentIndex === sectionRefs.length - 1 && atPageEnd ? "↑" : "↓"}
+        </span>
+      </motion.div>
 
-    </div>
+    </div >
   );
 }
