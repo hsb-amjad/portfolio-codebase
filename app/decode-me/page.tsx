@@ -126,7 +126,10 @@ export default function DecodeMe() {
           className="max-w-3xl text-lg leading-relaxed text-gray-200 space-y-6 text-justify"
         >
           <p>
-            A <span className="text-orange-400 font-semibold">Machine Learning Engineer</span> and Passionate Researcher with a strong foundation in neural networks, transformer architectures, computer vision, and deployment tools. Turning Python spells into intelligent systems; PyTorch, TensorFlow, custom ML models, RAG and LangChain are my favorite ingredients. Training machines to avoid my mistakes. If I lost, return to the nearest dataset...
+            I’m <span className="text-orange-400 font-semibold">Haseeb Amjad</span>, a Machine Learning Engineer and Mechatronics mind who builds bridges between algorithms and machines. My world swings between writing neural networks that learn from multispectral data, to crafting robots that roll and fly. I’m not just a coder who trains models; I’m an engineer who deploys them, scales them, and tests them in the real world. My journey started with mechatronics at NUST, but curiosity pushed me deeper, from robotics competitions where sparks literally flew, to research labs where I fused IoT devices with Artificial Intelligence. Along the way, I’ve published papers, won prizes, and turned messy data into systems that actually solve problems.
+          </p>
+          <p>
+            Skills? Think Python, PyTorch, MLflow, Docker, LangChain, and beyond, stitched together with a bit of chaos and a lot of discipline. Achievements? From winning national robotics contests to pushing MedTech research into peer-review, I carry both the builder’s grease and the researcher’s ink. Decode me, and you’ll find someone who thrives at the intersection of software, hardware, and imagination.
           </p>
         </motion.div>
       </section>
