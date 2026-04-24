@@ -77,11 +77,11 @@ export default function TheGrind() {
 
   const workExperience = [
     {
-      company: "Spatial Stack",
+      company: "4 Earth Intelligence",
       role: "Machine Learning Engineer",
-      period: "November 2025 – Current",
-      desc: "ML Engineer specializing in computer vision for multispectral and geospatial satellite data. I lead the development of algorithmic workflows and scalable production pipelines using PyTorch, APIs, and Docker.",
-      logo: "/spatialstack.png",
+      period: "November 2025 – April 2026",
+      desc: "ML Engineer specialized in computer vision for multispectral and geospatial satellite data. I led the development of algorithmic workflows and scalable production pipelines using PyTorch, APIs, and Docker.",
+      logo: "/4ei.jpg",
     },
     {
       company: "Cowlar Design Studio",
