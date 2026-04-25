@@ -240,31 +240,36 @@ export default function Brainwaves() {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="relative bg-zinc-900/90 border border-orange-400/40 rounded-2xl max-w-2xl w-full p-8 shadow-2xl">
+              <div className="relative bg-zinc-900/90 border border-orange-400/40 rounded-2xl max-w-2xl w-full shadow-2xl flex flex-col max-h-[90vh]">
                 {/* Close Button */}
                 <button
                   onClick={() => setSelectedPub(null)}
-                  className="absolute top-4 right-4 text-gray-400 hover:text-orange-400 transition"
+                  className="absolute top-4 right-4 text-gray-400 hover:text-orange-400 transition z-10"
                 >
                   <X className="w-6 h-6" />
                 </button>
 
-                <h2 className="text-2xl font-bold text-orange-300 mb-2">
-                  {selectedPub.title}
-                </h2>
-                {/* Full authors here */}
-                <p className="text-sm text-gray-400 italic mb-2">
-                  {selectedPub.authors}
-                </p>
-                <p className="text-sm text-gray-500 mb-4">
-                  {selectedPub.venue}
-                </p>
-                {/* Justified abstract */}
-                <p className="text-gray-300 mb-6 text-justify">
-                  {selectedPub.abstract}
-                </p>
-                <div className="flex justify-end">
-                  {!selectedPub.underReview && (
+                {/* Scrollable content */}
+                <div className="overflow-y-auto p-8 flex-1 min-h-0">
+                  <h2 className="text-2xl font-bold text-orange-300 mb-2 pr-8">
+                    {selectedPub.title}
+                  </h2>
+                  {/* Full authors here */}
+                  <p className="text-sm text-gray-400 italic mb-2">
+                    {selectedPub.authors}
+                  </p>
+                  <p className="text-sm text-gray-500 mb-4">
+                    {selectedPub.venue}
+                  </p>
+                  {/* Justified abstract */}
+                  <p className="text-gray-300 text-justify">
+                    {selectedPub.abstract}
+                  </p>
+                </div>
+
+                {/* Sticky footer with button */}
+                {!selectedPub.underReview && (
+                  <div className="flex justify-end px-8 py-4 border-t border-orange-400/20 shrink-0">
                     <a
                       href={selectedPub.link}
                       target="_blank"
@@ -273,8 +278,8 @@ export default function Brainwaves() {
                     >
                       Read Full Paper →
                     </a>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
             </motion.div>
           </>
