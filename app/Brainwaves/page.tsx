@@ -37,7 +37,7 @@ export default function Brainwaves() {
   };
 
   const publications = [
-            {
+    {
       year: 2026,
       title:
         "Learning Sleep Apnea Patterns from Raw ECG via Convolutional–Recurrent Architectures",
@@ -48,7 +48,7 @@ export default function Brainwaves() {
         "Sleep apnea is a common but serious and underdiagnosed sleep disorder caused by repeated interruptions in breathing patterns during sleep, posing significant risks to cardiovascular and neurological health. Traditional diagnostic approaches such as polysomnography (PSG) are accurate but expensive, inconvenient, and resource intensive. This research presents a robust, end-to-end deep learning framework for automated diagnosis of sleep apnea using raw single-lead ECG signals. The data has been taken from the PhysioNet Apnea-ECG database. This study proposes a hybrid model architecture that extracts spatial features using Convolutional Neural Networks (CNNs) and Long Short-Term Memory (LSTM) layers for temporal sequence modeling. This approach allows effective capture of both morphological and rhythmic patterns in ECG data. A comprehensive preprocessing pipeline is employed, including Z-score normalization, baseline drift removal using a high-pass filter, class balancing through under-sampling, and the removal of flat and outlier segments, resulting in high-quality input signals. The model has been trained and validated on a balanced dataset. It has been further improved through stratified split and optimized with early stopping and learning rate scheduling. Experimental results highlight that the proposed method achieves high accuracy of 0.91 in classifying apnea and normal events, showing strong potential for real-time, non-invasive, and scalable screening of sleep apnea in wearable health monitoring systems.",
       underReview: false,
     },
-        {
+    {
       year: 2025,
       title:
         "Label-Agnostic Representation Learning: A Contrastive Self-Supervised Framework for Benign vs Malignant Skin Lesion Detection",
@@ -60,19 +60,7 @@ export default function Brainwaves() {
       underReview: true,
     },
     {
-      year: 2024,
-      title:
-        "Precision Segmentation and Binary Masking of Skin Lesions in Automated Dermatological Diagnostics Using Detectron2",
-      authors:
-        "Haseeb Amjad, Nija Asif, Hassan Elahi, Umar Shahbaz Khan, Hassan Akbar, Ali R. Ansari, And Raheel Nawaz",
-      venue: "IEEE Access, 2024",
-      link: "https://doi.org/10.1109/ACCESS.2024.3514865",
-      abstract:
-        "Skin cancer is a common but preventable type of cancer. Observing the rising trend of cases being reported every year, accurate timely diagnosis can stop the spread of disease in the body. Manual diagnosis requires clinical expertise and causes delays whereas automatic diagnosis can bring accuracy and save time. This research introduces Detectron2, a state-of-the-art modular framework for deep learning-based segmentation tasks that enables precise instance-level segmentation, distinguishing overlapping lesions and accurately identifying individual regions of interest. This customized approach handles complex lesion structures and robustness against noise elements like hairlines and ink projections without preprocessing. Using ISIC and PH2 datasets, Detectron2 achieved IoU scores of 0.917 (ISIC 2016), 0.869 (ISIC 2017), 0.942 (ISIC 2018), and 0.915 (PH2).",
-      underReview: false,
-    },
-    {
-      year: 2024,
+      year: 2025,
       title:
         "Dynamic Temporal Modeling using Cascaded Deep Networks and Encoder Transformers for Human Action Recognition",
       authors:
@@ -82,6 +70,18 @@ export default function Brainwaves() {
       link: "https://doi.org/10.1109/ICRAI62391.2024.10894302",
       abstract:
         "Human action recognition is an important area of research in computer vision with applications in healthcare, smart manufacturing, video surveillance, and AI-driven systems. The rise of human-robot interactions further emphasizes its role. Gesture-based control enables robots to recognize and respond to human actions in real-time. However, action recognition models demand high computational power. This paper proposes a dynamic temporal modeling framework that captures short-term, long-term, and global dependencies with balanced accuracy and efficiency. CNNs extract spatial features, GRUs capture short-term patterns, LSTMs support long-term dependencies, and transformers enhance global understanding. The cascaded architecture integrates EfficientNetB0 with LSTMs, GRUs, and transformers, achieving 92% accuracy on UCF50 with improved inference time and robustness.",
+      underReview: false,
+    },
+    {
+      year: 2024,
+      title:
+        "Precision Segmentation and Binary Masking of Skin Lesions in Automated Dermatological Diagnostics Using Detectron2",
+      authors:
+        "Haseeb Amjad, Nija Asif, Hassan Elahi, Umar Shahbaz Khan, Hassan Akbar, Ali R. Ansari, And Raheel Nawaz",
+      venue: "IEEE Access, 2024",
+      link: "https://doi.org/10.1109/ACCESS.2024.3514865",
+      abstract:
+        "Skin cancer is a common but preventable type of cancer. Observing the rising trend of cases being reported every year, accurate timely diagnosis can stop the spread of disease in the body. Manual diagnosis requires clinical expertise and causes delays whereas automatic diagnosis can bring accuracy and save time. This research introduces Detectron2, a state-of-the-art modular framework for deep learning-based segmentation tasks that enables precise instance-level segmentation, distinguishing overlapping lesions and accurately identifying individual regions of interest. This customized approach handles complex lesion structures and robustness against noise elements like hairlines and ink projections without preprocessing. Using ISIC and PH2 datasets, Detectron2 achieved IoU scores of 0.917 (ISIC 2016), 0.869 (ISIC 2017), 0.942 (ISIC 2018), and 0.915 (PH2).",
       underReview: false,
     },
   ];
@@ -154,15 +154,14 @@ export default function Brainwaves() {
                       pub.underReview
                         ? {}
                         : {
-                            scale: 1.02,
-                            rotateX: 2,
-                            rotateY: -2,
-                            boxShadow: "0 8px 30px rgba(251,146,60,0.25)",
-                          }
+                          scale: 1.02,
+                          rotateX: 2,
+                          rotateY: -2,
+                          boxShadow: "0 8px 30px rgba(251,146,60,0.25)",
+                        }
                     }
-                    className={`block rounded-xl p-6 backdrop-blur transition border bg-white/5 border-gray-700 hover:bg-white/10 ${
-                      pub.underReview ? "cursor-not-allowed" : "cursor-pointer"
-                    }`}
+                    className={`block rounded-xl p-6 backdrop-blur transition border bg-white/5 border-gray-700 hover:bg-white/10 ${pub.underReview ? "cursor-not-allowed" : "cursor-pointer"
+                      }`}
                   >
                     <span className="text-sm font-semibold text-orange-300/80">
                       {pub.year}
@@ -195,31 +194,31 @@ export default function Brainwaves() {
         </div>
       </section>
 
-{/* Scroll Indicator */}
-<motion.div
-  onClick={handleScrollClick}
-  initial={{ opacity: 0, y: 10 }}
-  animate={{
-    opacity: [0.6, 1, 0.6],
-    y: [0, 6, 0],
-    boxShadow: [
-      "0 0 6px rgba(251,146,60,0.4)",
-      "0 0 16px rgba(251,146,60,0.7)",
-      "0 0 6px rgba(251,146,60,0.4)",
-    ],
-  }}
-  transition={{ duration: 2, repeat: Infinity }}
-  className="fixed bottom-6 right-6 z-50 flex items-center justify-center 
+      {/* Scroll Indicator */}
+      <motion.div
+        onClick={handleScrollClick}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{
+          opacity: [0.6, 1, 0.6],
+          y: [0, 6, 0],
+          boxShadow: [
+            "0 0 6px rgba(251,146,60,0.4)",
+            "0 0 16px rgba(251,146,60,0.7)",
+            "0 0 6px rgba(251,146,60,0.4)",
+          ],
+        }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="fixed bottom-6 right-6 z-50 flex items-center justify-center 
              w-10 h-10 rounded-full border border-orange-400/40 
              bg-orange-400/10 shadow-md cursor-pointer"
->
-  <span
-    className="relative -translate-y-0.5 text-orange-400 text-lg font-bold leading-none 
+      >
+        <span
+          className="relative -translate-y-0.5 text-orange-400 text-lg font-bold leading-none 
                drop-shadow-[0_0_6px_rgba(251,146,60,0.9)] select-none pointer-events-none"
-  >
-    {atPageEnd ? "↑" : "↓"}
-  </span>
-</motion.div>
+        >
+          {atPageEnd ? "↑" : "↓"}
+        </span>
+      </motion.div>
 
       {/* Modal for Publication */}
       <AnimatePresence>
