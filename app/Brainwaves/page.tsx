@@ -38,15 +38,15 @@ export default function Brainwaves() {
 
   const publications = [
             {
-      year: 2025,
+      year: 2026,
       title:
         "Learning Sleep Apnea Patterns from Raw ECG via Convolutional–Recurrent Architectures",
-      authors: "Nija Asif, Haseeb Amjad, Ahmad Tariq, Umar Shahbaz Khan, Hassan Elahi",
-      venue: "The 15th International Conference on Information and Communication Technology and Systems (ICTS 2025) (Accepted)",
-      link: "#",
+      authors: "Nija Asif, Haseeb Amjad, Ahmad Taqir, Umar Khan, And Hassan Elahi",
+      venue: "15th IEEE International Conference on Information & Communication Technology and System (ICTS)",
+      link: "https://doi.org/10.1109/ICTS67612.2025.11369676",
       abstract:
-        "This paper is accepted for publication and the abstract will be available upon publication.",
-      underReview: true,
+        "Sleep apnea is a common but serious and underdiagnosed sleep disorder caused by repeated interruptions in breathing patterns during sleep, posing significant risks to cardiovascular and neurological health. Traditional diagnostic approaches such as polysomnography (PSG) are accurate but expensive, inconvenient, and resource intensive. This research presents a robust, end-to-end deep learning framework for automated diagnosis of sleep apnea using raw single-lead ECG signals. The data has been taken from the PhysioNet Apnea-ECG database. This study proposes a hybrid model architecture that extracts spatial features using Convolutional Neural Networks (CNNs) and Long Short-Term Memory (LSTM) layers for temporal sequence modeling. This approach allows effective capture of both morphological and rhythmic patterns in ECG data. A comprehensive preprocessing pipeline is employed, including Z-score normalization, baseline drift removal using a high-pass filter, class balancing through under-sampling, and the removal of flat and outlier segments, resulting in high-quality input signals. The model has been trained and validated on a balanced dataset. It has been further improved through stratified split and optimized with early stopping and learning rate scheduling. Experimental results highlight that the proposed method achieves high accuracy of 0.91 in classifying apnea and normal events, showing strong potential for real-time, non-invasive, and scalable screening of sleep apnea in wearable health monitoring systems.",
+      underReview: false,
     },
         {
       year: 2025,
